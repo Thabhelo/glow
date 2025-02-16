@@ -2,8 +2,9 @@
 
 GLOW is a gamified financial education platform designed to help teens build credit awareness and financial literacy through interactive challenges, rewards, and social features.
 
-![GLOW Pass Preview](<img width="642" alt="Screenshot 2025-02-16 at 15 59 12" src="https://github.com/user-attachments/assets/fe6771f2-decd-4c0b-a030-c19064b83429" />)
-
+![GLOW Pass Preview](
+<img width="640" alt="Screenshot 2025-02-16 at 16 00 26" src="https://github.com/user-attachments/assets/df694e5d-d1cf-4d45-b530-ff51f1923f57" />
+)
 ## ✨ Features
 
 ### 🎮 Interactive Learning
