@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base styles */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  font-size: 14px;
+  @apply antialiased;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body {
+  @apply text-white antialiased min-h-screen;
+  background: linear-gradient(
+    135deg,
+    #1a0f2e 0%,
+    #20134e 25%,
+    #1e1155 50%,
+    #2c1166 75%,
+    #2d1178 100%
+  );
+  background-attachment: fixed;
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+}
+
+/* Utility classes */
+.font-handlee {
+  font-family: 'Handlee', cursive;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(to right, #818cf8, #c084fc, #f472b6);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+/* Scrollbar styles */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Glass morphism */
+.glass-morphism {
+  @apply bg-clip-padding backdrop-filter backdrop-blur-xl;
+  background-color: rgba(17, 24, 39, 0.4);
+}
+
+/* Animations */
+@keyframes glow {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 1; }
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* 3D effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.translate-z-20 {
+  transform: translateZ(20px);
+}
+
+/* Responsive padding and spacing */
+.responsive-container {
+  @apply px-4 sm:px-6 md:px-8 max-w-lg mx-auto;
+}
+
+.responsive-padding {
+  @apply p-4 sm:p-6;
+}
+
+/* Game UI elements */
+.game-card {
+  @apply relative overflow-hidden rounded-xl transition-all duration-300;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(67, 56, 202, 0.1));
+}
+
+.game-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.1), transparent 70%);
+}
+
+.game-progress-bar {
+  @apply h-2 rounded-full overflow-hidden bg-white/10;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+}
+
+.game-progress-fill {
+  @apply h-full transition-all duration-500;
+  background: linear-gradient(90deg, #8B5CF6 0%, #6D28D9 100%);
+}
+
+/* XP animations */
+@keyframes xpGain {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+.xp-gain {
+  animation: xpGain 1s ease-out forwards;
+}
