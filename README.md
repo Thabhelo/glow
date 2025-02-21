@@ -37,8 +37,8 @@ GLOW is a gamified financial education platform designed to help teens build cre
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/glow-pass.git
-cd glow-pass
+git clone https://github.com/thabhelo/glow.git
+cd glow
 ```
 
 2. Install dependencies:
